@@ -4,9 +4,13 @@ import  Nav from "react-bootstrap/Nav"
 import  NavDropdown from "react-bootstrap/NavDropdown"
 import logoPerfu from "./assets/img/logoPerfu.jpg"
 
-function CartWidget
-() {
-  return (
+function CartWidget()
+                        {
+  
+  
+  
+  
+                          return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                   <img src="{logoPerfu}" />
@@ -32,7 +36,9 @@ function CartWidget
                 </Nav>
                 </Navbar.Collapse>
                 </Container>
+                
   </Navbar>
+  
   )
 }
 

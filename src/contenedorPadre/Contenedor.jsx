@@ -2,14 +2,15 @@
 
 import Titulo from "../components/Navbar/NavBar"
 import Input from "../components/input/Input"
-import NavBar from "../components/Navbar/NavBar"
+
+import ItemCount from "../components/ItemCount/ItemCount"
 
 
 
 
 
 
-// import logo from './logo.svg';
+
 
 
 
@@ -29,22 +30,31 @@ function Contenedor() {
       let tituloprops2 = 'Soy titulo de app'
      
 
-
+      let arrayDeNombres = ['elena','paola','abel']
 
 
     return (
         <div className="App" onClick= { handleConsole } style={{backgroundColor:'pink'}}>
-        {/* <header className="App-header"> */}
+        
      
      <div>
-      {/* <NavBar/>  */}
+    
 
      <componentes/>
-       <Titulo   tituloProps={ tituloprops2 } subProps='Soy subtitulo de app'/> asi se llama una funcion en react
-       <Input placeholder='Ingrese el Alias' hellow = {fnSaludo}/> 
+      <Titulo   tituloProps={ tituloprops2 } subProps='Soy subtitulo de app'/>
+         
+         
+         <br/>
+      <ItemCount/>       
+         
+      
+      <Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/> 
+         
+          asi se llama una funcion en react
+       
        <br/>
 
-       {/* <img src={logo} className="App-logo" alt="logo"  /> */}
+      
        
        
      </div>

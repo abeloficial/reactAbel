@@ -4,12 +4,14 @@ import  Nav from "react-bootstrap/Nav"
 import  NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/logo.png"
 import cart from "../assets/cart.svg"
+// import Titulo from "../Titulo/Titulo"
 
 
 
 
 function NavBar(crops) {
-  console.log(crops)
+  
+ 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
@@ -38,6 +40,7 @@ function NavBar(crops) {
                 </Nav>
                 </Navbar.Collapse>
                 </Container>
+                
   </Navbar>
   )
 }
