@@ -4,7 +4,9 @@ import Titulo from "../components/Navbar/NavBar"
 import Input from "../components/input/Input"
 
 import ItemCount from "../components/ItemCount/ItemCount"
+import Promesas from "../components/clase5/Promesas"
 
+import ItemList from "../components/clase5/ItemList"
 
 
 
@@ -46,8 +48,8 @@ function Contenedor() {
          
          <br/>
       <ItemCount/>       
-         
-      
+      <Promesas/> 
+      {/* <ItemList/> */}
       <Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/> 
          
           asi se llama una funcion en react
