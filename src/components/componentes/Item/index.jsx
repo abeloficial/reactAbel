@@ -2,6 +2,9 @@ import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
 function Item({iteracion}) {
+  
+  
+  
   return (
     <>
       <Card  className="container m-3 lola border border-info ">

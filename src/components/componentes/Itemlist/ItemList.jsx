@@ -8,18 +8,11 @@ function ItemList({productos}) {
     return (
         
     <>
-     {productos.map((iteracion)=> <Item  key={iteracion.id}  producto={iteracion}/>
-        
-        
-        
-        
-        
-        
+     {productos.map((iteracion)=> <Item  key={iteracion.id}  iteracion={iteracion}/>
+       
         )}
-    
-    
-    </>
-  )
+     </>
+   )
 }
 
 export default ItemList

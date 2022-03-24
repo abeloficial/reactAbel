@@ -33,8 +33,8 @@ function Promesas() {
                             
                            {loading ? 
                            
-                            <h2>Cargando...</h2>
-                          //  <img  src="https://media2.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"/>
+                            // <h2>Cargando...</h2>
+                           <img  src="https://media2.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"/>
                            
                            :
                            
