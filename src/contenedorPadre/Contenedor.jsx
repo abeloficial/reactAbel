@@ -1,12 +1,14 @@
 
 
-import Titulo from "../components/Navbar/NavBar"
+// import Titulo from "../components/Titulo/Titulo"
 import Input from "../components/input/Input"
 
 import ItemCount from "../components/ItemCount/ItemCount"
 import Promesas from "../components/clase5/Promesas"
 
-import ItemList from "../components/clase5/ItemList"
+
+import NavBar from '../components/Navbar/NavBar'
+
 
 
 
@@ -29,50 +31,42 @@ function Contenedor() {
       }
       
       
-      let tituloprops2 = 'Soy titulo de app'
+      // let tituloprops2 = 'Soy titulo de app'
      
 
       let arrayDeNombres = ['elena','paola','abel']
 
 
     return (
-        <div className="App" onClick= { handleConsole } style={{backgroundColor:'pink'}}>
+       
+       <div className="App" onClick= { handleConsole } style={{backgroundColor:'pink'}}>
         
      
      <div>
-    
-
-     <componentes/>
-      <Titulo   tituloProps={ tituloprops2 } subProps='Soy subtitulo de app'/>
-         
-         
-         <br/>
-      <ItemCount/>       
-      <Promesas/> 
-      {/* <ItemList/> */}
-      <Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/> 
-         
-          asi se llama una funcion en react
        
-       <br/>
-
-      
+                              <NavBar/>
+                              
+                                {/* <Route exact path = "/" elemnt ={<Titulo/>} */}
+                              
+                                 {/* <Titulo   tituloProps={ tituloprops2 } subProps='Soy subtitulo de app'/> */}
+                                  
+                                  
+                                  <br/>
+                                <ItemCount/>       
+                                <Promesas/> 
+                               
+                                <Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/> 
+                                  
+                                   
+                                
+                                <br/>
+                             
+     
        
        
      </div>
      
-     {/* <p>
-       hola <code>src/App.js</code> Hola mundo!.
-     </p>
-     <a
-       className="App-link"
-       href="https://reactjs.org"
-       target="_blank"
-       rel="noopener noreferrer"
-     >
-       Learn React
-     </a>
-   </header> */}
+    
   
  </div>
     )
