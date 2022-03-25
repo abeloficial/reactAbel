@@ -5,6 +5,7 @@ import { useEffect,useState } from "react";
  import { getFetch } from "./getFetch";
 import './promesas.css'
 import ItemList from "../componentes/Itemlist/ItemList";
+import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
 
 
 
@@ -43,11 +44,13 @@ function Promesas() {
                            <br/>
                             
                             <ItemList productos={productos}/>
+                            
                           
                          
                             </div>
+                           
                    } 
-                   </div>
+                   <ItemDetailContainer/> </div>
               )
  
 }
