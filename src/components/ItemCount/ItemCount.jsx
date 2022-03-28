@@ -10,7 +10,11 @@ setContador(contador + 1)
  }
   
   const fnresta = ()=>{
+    if (contador < 1){
+      console.log('no se puede')
+    }else
     setContador(contador - 1)
+    
   }
 
   const fnreset = ()=>{

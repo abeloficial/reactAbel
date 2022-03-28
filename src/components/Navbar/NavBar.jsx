@@ -3,8 +3,9 @@ import  Navbar from "react-bootstrap/Navbar"
 import  Nav from "react-bootstrap/Nav"
 import  NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/logo.png"
-import cart from "../assets/cart.svg"
-// import Titulo from "../Titulo/Titulo"
+import carrito from "../assets/carrito.png"
+import { Link, NavLink } from "react-router-dom"
+import Titulo from "../Titulo/Titulo"
 
 
 
@@ -13,26 +14,29 @@ function NavBar(crops) {
   
  
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="info" variant="danger">
                 <Container>
                   <img src={logo}width="70rem"    alt="imagenlogo"        />
-                <Navbar.Brand href="#home">Mi Bebe Perfu</Navbar.Brand>
+                <NavLink to="/">Mi Bebe Perfu</NavLink>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                    {/*  <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link> */}
                     <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Productos</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Articulos de temporada</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Promos</NavDropdown.Item>
+                    <NavLink to="/categoria/productos">Productos</NavLink>
+                    <NavLink to="/categoria/articulos">Articulos de temporada</NavLink>
+                    <NavLink to="/categoria/promos">Promos</NavLink>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">Intagram</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Nav>
-                    <Nav.Link href="#deets">Carrito</Nav.Link>
-                    <img src={cart} className="bg-danger" alt="logoCarrito"/>
+                    <Link to='/cart'>
+                      {/* Carrito */}
+                      <img src={carrito} className="bg-danger" alt="logoCarrito"/>
+                    </Link>
+                   
                      
                     <Nav.Link eventKey={2} href="#memes">
                    

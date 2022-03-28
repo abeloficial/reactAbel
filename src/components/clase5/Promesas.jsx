@@ -6,6 +6,7 @@ import { useEffect,useState } from "react";
 import './promesas.css'
 import ItemList from "../componentes/Itemlist/ItemList";
 import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
+import { useParams } from "react-router-dom";
 
 
 
@@ -14,6 +15,8 @@ import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailCo
 
 function Promesas() {
     
+
+     const {categoriaId} = useParams()
      const [loading, setLoading] = useState(true) 
     const [productos,setProductos] = useState([]) 
    useEffect(()=>{
@@ -27,7 +30,7 @@ function Promesas() {
 }, [])
     
   
- 
+ console.log(categoriaId)
     return (
                    <div>
                        

@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card" 
 import Button from "react-bootstrap/Button"
+import { Link } from "react-router-dom"
 
 function Item({iteracion}) {
   
@@ -14,7 +15,11 @@ function Item({iteracion}) {
                                             <Card.Text>
                                             Esto es un texto de prueba
                                             </Card.Text>
-                                            <Button className="btn btn-warning">Comprar</Button>
+                                            <Link to={`/detalle/${iteracion.id}`}>
+                                            <Button className="btn btn-warning">Agregar</Button>
+                                            
+                                            </Link>
+                                            
                                         </Card.Body>
                                  </Card>
     </>
