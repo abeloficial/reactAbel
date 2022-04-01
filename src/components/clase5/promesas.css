@@ -1,3 +1,14 @@
 .imagenes{
-    height: 180px;
+
 }
+    @media (min-width: 400px){
+        .divclass{
+            display: flex;
+             flex-direction: column;
+             background-color: pink;
+        }
+    }
+        
+       
+    
+    

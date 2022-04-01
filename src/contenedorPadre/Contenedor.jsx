@@ -1,9 +1,11 @@
 
 
 // import Titulo from "../components/Titulo/Titulo"
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Promesas from "../components/clase5/Promesas"
 import Cart from "../components/componentes/Cart/Cart"
+// import Item from "../components/componentes/Item"
+import ItemDetailContainer from "../components/componentes/ItemDetailContainer/ItemDetailContainer"
 import Input from "../components/input/Input"
 import ItemCount from "../components/ItemCount/ItemCount"
 import NavBar from '../components/Navbar/NavBar'
@@ -23,26 +25,28 @@ function Contenedor() {
      let arrayDeNombres = ['elena','paola','abel']
     return (
        <BrowserRouter>
-                        <div className="App" onClick= { handleConsole } style={{backgroundColor:'white'}}>
-                        <NavBar/> 
-                        {/* <Promesas/> */}
+                        <div className="App"  style={{backgroundColor:'white'}}>
+                            <NavBar/> 
                             
-                        <Routes>
-                            <Route  path="/" />  
-                            <Route  path="/contador" element={<ItemCount/>}/>
-                            <Route  path="/productos" element={<Promesas/>} />
-                            <Route  path="/categoria/:categoriaId" element={<Promesas/>} />
-                            <Route  path="/" element={<Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/>  } />                     
-                            <Route  path="/cart" element={<Cart/>}/>                            
-                        </Routes>
-                        
-                                              <>
-                                                 
-                                                   
-                                                    <br/>
-                                                </>
-                            </div>
- </BrowserRouter> )
+                            <Routes>
+                                
+                                <Route  
+                                  path="/contador"
+                                  element={<ItemCount/>}
+                                  />
+                                <Route 
+                                       path="/" 
+                                       element={<Promesas/>} />
+                                <Route  path="/categoria/:categoriaId" element={<Promesas/>} />
+                                <Route  path="/detalle/:detalleId" element={<ItemDetailContainer/>} />
+                                <Route path="/*" element={<Navigate to='/' replace/> } />
+                                
+                                <Route  path="/" element={<Input placeholder='Ingrese el Alias' hellow = {fnSaludo} nombres={arrayDeNombres}/>  } />                     
+                                <Route  path="/cart" element={<Cart/>}/> 
+                                                    
+                            </Routes>
+                         </div>
+        </BrowserRouter> )
   }
   
   export default Contenedor

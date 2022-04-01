@@ -8,7 +8,7 @@ function ItemList({productos}) {
     return (
         
     <>
-     {productos.map((iteracion)=> <Item  key={iteracion.id}  iteracion={iteracion}/>
+     {productos.map((producto)=> <Item  key={producto.id}  producto={producto}/>
        
         )}
      </>

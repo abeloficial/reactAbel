@@ -20,30 +20,44 @@ function Promesas() {
      const [loading, setLoading] = useState(true) 
     const [productos,setProductos] = useState([]) 
    useEffect(()=>{
-    setTimeout(()=>{    
-    getFetch
-    .then(respuesta =>{ setProductos(respuesta)
-     } )
-    .catch(err => console.log(err))
-   .finally(()=> setLoading(false))
-},3000);
-}, [])
-    
-  
- console.log(categoriaId)
+        if(categoriaId){ setTimeout(()=>{    
+         getFetch
+         .then(respuesta =>{ setProductos(respuesta.filter(item=>item.categoria === categoriaId))
+          } )
+         .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+     },2000);
+
+        }
+        
+        
+        else{ 
+           setTimeout(()=>{    
+         getFetch
+         .then(respuesta =>{ setProductos(respuesta)
+          } )
+         .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+     },2000);
+           
+         
+        }
+         }, [ categoriaId,])
+
+    console.log(categoriaId)
     return (
-                   <div>
+                   <div className="divclass">
                        
                             
                            {loading ? 
                            
-                            // <h2>Cargando...</h2>
-                           <img  src="https://media2.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"/>
+                            <h2>Cargando...</h2>
+                           // <img  src="https://media2.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"/>
                            
                            :
                            
                             
-                          <div className="container d-flex width:20px cardone ">
+                          <div className="container d-flex width:20px cardone col-xs 12 ">
                            <br/>
                             
                             <ItemList productos={productos}/>
@@ -53,7 +67,8 @@ function Promesas() {
                             </div>
                            
                    } 
-                   <ItemDetailContainer/> </div>
+                   {/* <ItemDetailContainer/>  */}
+                   </div>
               )
  
 }

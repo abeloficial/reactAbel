@@ -1,42 +1,36 @@
 import { useState,useEffect } from "react"
-import { getFetch } from "../../clase5/getFetch";
+import { getFetch } from "../../clase5/getFetch"
+import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
 
+
+import {useParams} from "react-router-dom"
 import ItemDetail from "../../ItemDetails/ItemDetail"
 
 
 
 function ItemDetailContainer() {
+const [producto,setProducto] = useState({})
+const {detalleId}= useParams()
   
-  
-  const [productos,setProductos] = useState({})
-  
-  
+ 
        
    useEffect(()=>{
 
     getFetch
-    .then(resp => setProductos(resp.find(prod =>prod.id === "1")))
+    .then(resp => setProducto(resp.find(item=>item.id === detalleId)))
     .catch(err => console.log(err))
     // .finally(()setLoading(false))
-
-
-
-
-
-
-   },[])
-  
-  
-  
-  
-  
-  return (
-    <div> <ItemDetail productos={productos}/>    </div>  
     
-    
-    
-    
-  )
+},[])
+
+
+return (
+          <div>
+              
+                 <ItemDetail producto={producto}/>   
+                    <Intercambiabilidad/>   
+          
+          </div>  
+    )
 }
-
 export default ItemDetailContainer

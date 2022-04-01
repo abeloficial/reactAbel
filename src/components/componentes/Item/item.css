@@ -1,0 +1,13 @@
+.lola{
+
+}
+
+@media(max-width:400px){
+    .lola{
+        color: green;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 700px;
+    }
+}

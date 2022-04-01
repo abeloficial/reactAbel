@@ -5,7 +5,7 @@ import  NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/logo.png"
 import carrito from "../assets/carrito.png"
 import { Link, NavLink } from "react-router-dom"
-import Titulo from "../Titulo/Titulo"
+// import Titulo from "../Titulo/Titulo"
 
 
 
@@ -14,7 +14,7 @@ function NavBar(crops) {
   
  
   return (
-    <Navbar collapseOnSelect expand="lg" bg="info" variant="danger">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                   <img src={logo}width="70rem"    alt="imagenlogo"        />
                 <NavLink to="/">Mi Bebe Perfu</NavLink>
@@ -24,11 +24,11 @@ function NavBar(crops) {
                    {/*  <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link> */}
                     <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                    <NavLink to="/categoria/productos">Productos</NavLink>
-                    <NavLink to="/categoria/articulos">Articulos de temporada</NavLink>
-                    <NavLink to="/categoria/promos">Promos</NavLink>
+                    <NavLink to="/categoria/liquidacion">liquidacion</NavLink>
+                    {/* <NavLink to="/categoria/articulos">Articulos de temporada</NavLink> */}
+                    <NavLink to="/categoria/promo">Promos</NavLink>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Intagram</NavDropdown.Item>
+                    {/* <NavDropdown.Item href="#action/3.4">Intagram</NavDropdown.Item> */}
                     </NavDropdown>
                 </Nav>
                 <Nav>
