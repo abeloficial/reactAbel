@@ -5,6 +5,7 @@ import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
 
 import {useParams} from "react-router-dom"
 import ItemDetail from "../../ItemDetails/ItemDetail"
+import ItemCount from "../../ItemCount/ItemCount"
 
 
 
@@ -27,8 +28,9 @@ const {detalleId}= useParams()
 return (
           <div>
               
-                 <ItemDetail producto={producto}/>   
-                    <Intercambiabilidad/>   
+                 <ItemDetail producto={producto}/>  
+                 {/* < ItemCount/>  */}
+                    {/* <Intercambiabilidad/>    */}
           
           </div>  
     )

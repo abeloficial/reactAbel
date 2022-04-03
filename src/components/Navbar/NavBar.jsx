@@ -34,7 +34,10 @@ function NavBar(crops) {
                 <Nav>
                     <Link to='/cart'>
                       {/* Carrito */}
-                      <img src={carrito} className="bg-danger" alt="logoCarrito"/>
+                      <button type="button" class="btn $indigo-200">
+                            Carrito <span class="badge bg-secondary">0</span>
+                     </button>
+                      {/* <img src={carrito} className="bg-danger" alt="logoCarrito"/> */}
                     </Link>
                    
                      

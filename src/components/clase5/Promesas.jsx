@@ -57,7 +57,7 @@ function Promesas() {
                            :
                            
                             
-                          <div className="container d-flex width:20px cardone col-xs 12 ">
+                          <div className="container d-flex flex-wrap width:20px cardone col-xs 12 ">
                            <br/>
                             
                             <ItemList productos={productos}/>

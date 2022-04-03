@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import ItemCount from "../ItemCount/ItemCount";
 
 
 const InputCount= ()=> {
@@ -9,7 +10,11 @@ const InputCount= ()=> {
             <button 
                 className="btn btn-outline-primary" 
                 onClick={()=>console.log('ir a cart') } 
-            >Ir al Cart o Terminar compra</button>
+            >Ir al Cart </button>
+            <button 
+                className="btn btn-outline-primary" 
+                onClick={()=>console.log('ir a cart') } 
+            > Terminar compra</button>
         </Link>
     )
 }
@@ -37,8 +42,9 @@ const Intercambiabilidad = () => {
             <h2>Item Description</h2>
             
             {
-                inputType === 'button' ? 
+                inputType === 'button'   ? 
                     <ButtonCount handleInter={handleInter} />
+                    
                 : 
                     <InputCount />
             }

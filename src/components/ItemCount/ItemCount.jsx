@@ -2,12 +2,21 @@ import './ItemCount.css'
 import {useState} from 'react'
 
 
-function ItemCount() {
- 
-  const  [contador,setContador] = useState(0)
+          
+
+              
+function ItemCount({stock,initial,lilu}) {
+//  const [stock,setStock]=useState(true)
+  
+
+const  [contador,setContador] = useState(1)
  const fnsumar = ()=>{
 setContador(contador + 1)
+if(contador === 10){
+  setContador(10 )
+}else{console.log('todo ok')
  }
+}
   
   const fnresta = ()=>{
     if (contador < 1){
@@ -18,9 +27,8 @@ setContador(contador + 1)
   }
 
   const fnreset = ()=>{
-    setContador(0)
+    setContador(1)
   }
-  
   
   return (
     <div className='divo border border-dark rounded-pill bg-secondary container '>
@@ -34,8 +42,10 @@ setContador(contador + 1)
                   
                   
                   <button  onClick={fnresta} className='btn btn-danger '  >-</button>
-
+                  
                   </div>
+                  <br/>
+                  
             </div>
         </div>
         <br/>
