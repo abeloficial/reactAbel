@@ -7,29 +7,30 @@ import './ItemDetails.css'
 
 
 
- const OnAdd = ()=>{
+ const OnAdd = ({Testado})=>{
            
            return(
+             
 
             <Link to='/Cart'>
             
             <button 
                 className="btn btn-outline-primary" 
-                onClick={()=>console.log('hola')} 
+                onClick={Testado} 
                > Terminar compra
             </button>
             <button 
                 className="btn btn-outline-primary" 
-                onClick={()=>console.log('ir a cart') } 
+                onClick={(estado)=>console.log('ir a cart') } 
                > Ir a Cart
             </button>
             </Link>
 
 
+)
 
 
-
-           )
+           
           
 }
 
@@ -43,51 +44,33 @@ const ButtonCountt= ({handleInter})=> {
 
 }
 function ItemDetail({producto}) {
-
+  const [cant, setCant] = useState(true)
   const [cambio, setCambio]= useState(true)
   const handleInter= ()=>{
     setCambio(false)
   }
-
+const Testado = ()=>{
+  setCant(false)
+}
   
   console.log(producto)
   return (
-    <div className=' border border-dark container lilita '>
+    <div className='  container lilita '>
     <img src={producto.img}  className='img'/>
     <div>{producto.price}</div>
     <h2>{producto.name}</h2>
      
-     
-    
-     
+    <ItemCount initial={1} stock={5} onAdd={OnAdd}              />
   
-   
-      <ItemCount/>
-    {cambio === true ? <ButtonCountt handleInter={handleInter}/>
-    
-  
-  :
-  <OnAdd/>
-  }
+      {cambio ? < ButtonCountt handleInter={handleInter}/> :
       
+      <OnAdd   Testado={Testado} />
+      
+      }
       
      
   
-     
-     
-      
-     
-      
-      
-      
-      
-    
-    
-     
-     
-     
-      
-    </div>
+     </div>
     )
 }
 

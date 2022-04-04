@@ -10,29 +10,42 @@ import ItemCount from "../../ItemCount/ItemCount"
 
 
 function ItemDetailContainer() {
+const [loading,setLoading] = useState(true)
 const [producto,setProducto] = useState({})
 const {detalleId}= useParams()
   
  
        
    useEffect(()=>{
+    setTimeout(()=>{
 
-    getFetch
-    .then(resp => setProducto(resp.find(item=>item.id === detalleId)))
-    .catch(err => console.log(err))
-    // .finally(()setLoading(false))
-    
-},[])
+
+        getFetch
+        .then(resp => setProducto(resp.find(item=>item.id === detalleId)))
+        .catch(err => console.log(err))
+        .finally(()=>setLoading(false))
+        
+    },2000)
+
+
+    },)
+   
 
 
 return (
+
+    <>
+    {loading ? <h2>Cargando productos..</h2>: 
           <div>
+              
+              
               
                  <ItemDetail producto={producto}/>  
                  {/* < ItemCount/>  */}
                     {/* <Intercambiabilidad/>    */}
           
-          </div>  
+                </div>  
+    } </>    
     )
 }
 export default ItemDetailContainer

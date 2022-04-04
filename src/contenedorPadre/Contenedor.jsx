@@ -9,6 +9,7 @@ import ItemDetailContainer from "../components/componentes/ItemDetailContainer/I
 import Input from "../components/input/Input"
 import ItemCount from "../components/ItemCount/ItemCount"
 import NavBar from '../components/Navbar/NavBar'
+import CartContextProvider, { CartContext } from "../context/cartContext"
 
 
 function Contenedor() {
@@ -25,6 +26,11 @@ function Contenedor() {
      let arrayDeNombres = ['elena','paola','abel']
     return (
        <BrowserRouter>
+       
+
+
+
+          <CartContextProvider> 
                         <div className="App"  style={{backgroundColor:'white'}}>
                             <NavBar/> 
                             
@@ -46,6 +52,7 @@ function Contenedor() {
                                                     
                             </Routes>
                          </div>
+            </CartContextProvider>               
         </BrowserRouter> )
   }
   

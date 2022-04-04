@@ -1,56 +1,56 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-// import ItemCount from "../ItemCount/ItemCount";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
+// // import ItemCount from "../ItemCount/ItemCount";
 
 
-const InputCount= ()=> {
+// const InputCount= ()=> {
 
-    return (
-        <Link to='/cart' >
-            <button 
-                className="btn btn-outline-primary" 
-                onClick={()=>console.log('ir a cart') } 
-            >Ir al Cart </button>
-            <button 
-                className="btn btn-outline-primary" 
-                onClick={()=>console.log('ir a cart') } 
-            > Terminar compra</button>
-        </Link>
-    )
-}
+//     return (
+//         <Link to='/cart' >
+//             <button 
+//                 className="btn btn-outline-primary" 
+//                 onClick={()=>console.log('ir a cart') } 
+//             >Ir al Cart </button>
+//             <button 
+//                 className="btn btn-outline-primary" 
+//                 onClick={()=>console.log('ir a cart') } 
+//             > Terminar compra</button>
+//         </Link>
+//     )
+// }
 
 
 
-const ButtonCount= ({handleInter})=> {
-    return <button 
-                className="btn btn-outline-success" 
-                onClick={handleInter}
-            >Agregar Al carrito</button>
+// // const ButtonCount= ({handleInter})=> {
+// //     return <button 
+// //                 className="btn btn-outline-success" 
+// //                 onClick={handleInter}
+// //             >Agregar Al carrito</button>
 
-}
+// // }
 
-const Intercambiabilidad = () => {
+// const Intercambiabilidad = () => {
 
-    const [inputType, setInputType ] = useState('button')
+//     const [inputType, setInputType ] = useState('button')
 
-    const handleInter=()=>{
-        setInputType('input')
-    }
+//     const handleInter=()=>{
+//         setInputType('input')
+//     }
     
-    return (
-        <div>
-            <h2>Item Description</h2>
+//     return (
+//         <div>
+//             <h2>Item Description</h2>
             
-            {
-                inputType === 'button'   ? 
-                    <ButtonCount handleInter={handleInter} />
+//             {
+//                 inputType === 'button'   ? 
+//                     <ButtonCount handleInter={handleInter} />
                     
-                : 
-                    <InputCount />
-            }
-             {/* <Count onConfirm={addToCart} maxQuantity={itemMax} />  */}
-        </div>
-    )
-}
+//                 : 
+//                     <InputCount />
+//             }
+//              {/* <Count onConfirm={addToCart} maxQuantity={itemMax} />  */}
+//         </div>
+//     )
+// }
 
-export default Intercambiabilidad
+// export default Intercambiabilidad
