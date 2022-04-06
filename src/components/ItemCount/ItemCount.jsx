@@ -48,7 +48,7 @@ const  [contador,setContador] = useState(initial)
             </div>
         </div>
         <br/>
-        {/* <button onClick={fnreset} className=''>Agregar</button> */}
+        <button onClick={fnreset} className=''>Agregar</button>
     </div>
   )
 }

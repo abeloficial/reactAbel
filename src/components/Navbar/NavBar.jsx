@@ -6,13 +6,13 @@ import logo from "../assets/logo.png"
 import carrito from "../assets/carrito.png"
 import { Link, NavLink } from "react-router-dom"
 // import Titulo from "../Titulo/Titulo"
-
+// import { useCartContex } from '../../../context/cartContext'
 
 
 
 function NavBar(crops) {
   
- 
+  
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
