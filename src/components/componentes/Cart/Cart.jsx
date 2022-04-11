@@ -2,16 +2,33 @@ import React from 'react'
 import { useCartContex } from '../../../context/cartContext'
 
 
-
 function Cart() {
 
-  const {cartList, removeCart} = useCartContex()
+  const {cartList, removeCart,removeItem} = useCartContex()
+  
+  
+  
+  
   return (
-    <div>
-      {cartList.map(prod => <li key={prod.id}>nombre:{prod.name}-cantidad : {prod.cantidad}</li>)}
+
+    <>
+    {cartList.length === 0 ? <h2>Tu carrito esta vacio</h2>:<div className='container d-flex flex-column '>
+
       
-    <button className='btn btn-outline-success' onClick={removeCart}> Vaciar Carrito</button></div>
-  )
-}
+{cartList.map(prod => <li key={prod.id}> <img src= {prod.img} />nombre:{prod.name}- cantidad : {prod.cantidad}   </li>)}
+
+<button onClick={removeItem}>delete item</button>
+<button className='btn btn-outline-success' onClick={removeCart}> Vaciar Carrito</button>
+{/* <h2>Total :  $ {total}</h2> */}
+
+</div>    }
+</>
+)
+    
+    
+    
+
+   
+  }
 
 export default Cart

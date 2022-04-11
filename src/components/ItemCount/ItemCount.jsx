@@ -14,6 +14,7 @@ const  [contador,setContador] = useState(initial)
    if(contador < stock){
      setContador(contador + 1 )
    }
+   
  }
 
   
@@ -27,6 +28,7 @@ const  [contador,setContador] = useState(initial)
 
   const fnreset = ()=>{
     OnAdd(contador)
+    setContador(contador)
   }
   console.log(contador)
   return (
@@ -37,10 +39,10 @@ const  [contador,setContador] = useState(initial)
                    
                   </div>
                   <div className='botones container d-flex justify-content-evenly'>
-                  <button    onClick={fnsumar}          className='btn btn-info ' >+</button>
+                  <button    onClick={fnsumar}          className='btn btn-info ' >agregar</button>
                   
                   <h2>{contador}</h2>
-                  <button  onClick={fnresta} className='btn btn-danger '  >-</button>
+                  <button  onClick={fnresta} className='btn btn-danger '  >Sacar</button>
                   
                   </div>
                   <br/>
@@ -48,7 +50,7 @@ const  [contador,setContador] = useState(initial)
             </div>
         </div>
         <br/>
-        <button onClick={fnreset} className=''>Agregar</button>
+        <button className="btn btn-outline-info" onClick={fnreset}>Detalle</button>
     </div>
   )
 }

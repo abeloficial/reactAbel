@@ -1,7 +1,7 @@
 import { Button } from 'bootstrap'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCartContex } from '../../context/cartContext'
+import { CartContext, useCartContex } from '../../context/cartContext'
 
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetails.css'
@@ -38,31 +38,27 @@ import './ItemDetails.css'
 // }
 
 
-// const ButtonCountt= ({handleInter})=> {
+const ButtonCountt= ({handleInter})=> {
   
-//   return <button 
-//               className="btn btn-outline-success" 
-//               onClick={handleInter}
-//           >Agregar Al carrito</button>
+  return <button 
+              className="btn btn-outline-success" 
+              onClick={handleInter}
+          >Agregar Al carrito</button>
           
 
-// }
-function ItemDetail({producto}) {
-  const {addToCart, cartList} = useCartContex()
-
-function OnAdd (cant){
-  console.log(cant)
-  addToCart({...producto,cantidad:cant})
-
 }
-
-
+function ItemDetail({producto}) {
+  const {addToCart, cartList,removeItem} = useCartContex()
+function OnAdd (cant){
+  addToCart({...producto,cantidad:cant}) 
+  removeItem({...producto, cantidad : cant})
+}
 console.log(cartList)
   const [cant, setCant] = useState(true)
-  // const [cambio, setCambio]= useState(true)
-  // const handleInter= ()=>{
-  //   setCambio(false)
-  // }
+  const [cambio, setCambio]= useState(true)
+  const handleInter= ()=>{
+    setCambio(false)
+  }
 const Testado = ()=>{
   setCant(false)
 }
@@ -74,14 +70,10 @@ const Testado = ()=>{
     <div>{producto.price}</div>
     <h2>{producto.name}</h2>
     
+     {cant ? <ItemCount initial={1} stock={5} OnAdd={OnAdd}              /> :< ButtonCountt handleInter={handleInter}/> }
      
-      <ItemCount initial={1} stock={5} OnAdd={OnAdd}              />
-  
-      {/* {cambio ? < ButtonCountt handleInter={handleInter}/> :
-      
-      <OnAdd   Testado={Testado} />
-      
-      } */}
+     
+
       
      
   

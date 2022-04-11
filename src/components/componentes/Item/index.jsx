@@ -17,7 +17,7 @@ function Item({producto}) {
                                             Esto es un texto de prueba
                                             </Card.Text>
                                             <Link to={`/detalle/${producto.id}`}>
-                                            <Button className="btn btn-warning">Agregar</Button>
+                                            <Button className="btn btn-warning">Detalle</Button>
                                             
                                             </Link>
                                             
