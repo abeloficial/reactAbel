@@ -48,10 +48,10 @@ const ButtonCountt= ({handleInter})=> {
 
 }
 function ItemDetail({producto}) {
-  const {addToCart, cartList,removeItem} = useCartContex()
+  const {addToCart, cartList} = useCartContex()
 function OnAdd (cant){
   addToCart({...producto,cantidad:cant}) 
-  removeItem({...producto, cantidad : cant})
+ 
 }
 console.log(cartList)
   const [cant, setCant] = useState(true)

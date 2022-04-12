@@ -5,13 +5,14 @@ import  NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/logo.png"
 import carrito from "../assets/carrito.png"
 import { Link, NavLink } from "react-router-dom"
+import { useCartContex } from "../../context/cartContext"
 // import Titulo from "../Titulo/Titulo"
 // import { useCartContex } from '../../../context/cartContext'
 
 
 
 function NavBar(crops) {
-  
+  const {cantidadTotalItem} = useCartContex()
   
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -35,7 +36,7 @@ function NavBar(crops) {
                     <Link to='/cart'>
                       {/* Carrito */}
                       <button type="button" class="btn $indigo-200">
-                            Carrito <span class="badge bg-secondary">0</span>
+                            Carrito <span class="badge bg-secondary">{cantidadTotalItem()}</span>
                      </button>
                       {/* <img src={carrito} className="bg-danger" alt="logoCarrito"/> */}
                     </Link>
