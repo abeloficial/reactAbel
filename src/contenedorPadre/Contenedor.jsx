@@ -9,16 +9,16 @@ import ItemDetailContainer from "../components/componentes/ItemDetailContainer/I
 import Input from "../components/input/Input"
 import ItemCount from "../components/ItemCount/ItemCount"
 import NavBar from '../components/Navbar/NavBar'
-import CartContextProvider, { CartContext } from "../context/cartContext"
+import CartContextProvider from "../context/cartContext"
 
 
 function Contenedor() {
 
 
-    const handleConsole = ()=>{
-        console.log('soy eveneto')
+    // const handleConsole = ()=>{
+    //     console.log('soy eveneto')
       
-      }
+    //   }
       const fnSaludo = ()=>{
         console.log('estoy saludando')
       }

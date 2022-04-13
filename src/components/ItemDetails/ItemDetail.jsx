@@ -54,18 +54,18 @@ function OnAdd (cant){
 }
 console.log(cartList)
   const [cant, setCant] = useState(true)
-  const [cambio, setCambio]= useState(true)
-  const handleInter= ()=>{
-    setCambio(false)
-  }
-const Testado = ()=>{
-  setCant(false)
-}
+//   const [cambio, setCambio]= useState(true)
+//   const handleInter= ()=>{
+//     setCambio(false)
+//   }
+// const Testado = ()=>{
+//   setCant(false)
+// }
   
   
   return (
     <div className='  container lilita '>
-    <img src={producto.img}  className='img'/>
+    <img src={producto.img}  className='img' alt="imagen"/>
     <div>{producto.price}</div>
     <h2>{producto.name}</h2>
     
