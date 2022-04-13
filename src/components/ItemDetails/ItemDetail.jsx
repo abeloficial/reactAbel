@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
 import {  useCartContex } from '../../context/cartContext'
 
@@ -53,7 +53,7 @@ function OnAdd (cant){
  
 }
 console.log(cartList)
-  const [cant, setCant] = useState(true)
+  // const [cant, setCant] = useState(true)
 //   const [cambio, setCambio]= useState(true)
 //   const handleInter= ()=>{
 //     setCambio(false)
@@ -65,11 +65,13 @@ console.log(cartList)
   
   return (
     <div className='  container lilita '>
+      
     <img src={producto.img}  className='img' alt="imagen"/>
     <div>{producto.price}</div>
     <h2>{producto.name}</h2>
     
-     {cant ? <ItemCount initial={1} stock={5} OnAdd={OnAdd}              /> :< ButtonCountt /> }
+      <ItemCount initial={1} stock={5} OnAdd={OnAdd}              /> 
+      :< ButtonCountt />
      
      
 

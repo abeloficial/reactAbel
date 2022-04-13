@@ -2,12 +2,12 @@
 
 
 import { useEffect,useState } from "react";
- import { getFetch } from "./getFetch";
+//  import { getFetch } from "./getFetch";
 import './promesas.css'
 import ItemList from "../componentes/Itemlist/ItemList";
 // import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
 import { useParams } from "react-router-dom";
-
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
 
 
@@ -19,32 +19,74 @@ function Promesas() {
      const {categoriaId} = useParams()
      const [loading, setLoading] = useState(true) 
     const [productos,setProductos] = useState([]) 
+   
+   
+   
+   
    useEffect(()=>{
-        if(categoriaId){ setTimeout(()=>{    
-         getFetch
-         .then(respuesta =>{ setProductos(respuesta.filter(item=>item.categoria === categoriaId))
-          } )
+      if(categoriaId){
+         const querydb = getFirestore() //aca apunta a que voy a usar firestore
+         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion 
+         
+         getDocs(queryCollection)
+         .then(resp => setProductos(  resp.docs.map(item=> ({ id: item.id, ...item.data()})) ))
+   
+   
          .catch(err => console.log(err))
         .finally(()=> setLoading(false))
-     },2000);
 
-        }
-        
-        
-        else{ 
-           setTimeout(()=>{    
-         getFetch
-         .then(respuesta =>{ setProductos(respuesta)
-          } )
+      }else{
+         const querydb = getFirestore() //aca apunta a que voy a usar firestore
+         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion 
+         
+         getDocs(queryCollection)
+         .then(resp => setProductos(  resp.docs.map(item=> ({ id: item.id , ...item.data()})) ))
+   
+   
          .catch(err => console.log(err))
         .finally(()=> setLoading(false))
-     },2000);
+
+      }
+     
+
+   },[categoriaId])
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    // useEffect(()=>{
+   //      if(categoriaId){ setTimeout(()=>{    
+   //       getFetch
+   //       .then(respuesta =>{ setProductos(respuesta.filter(item=>item.categoria === categoriaId))
+   //        } )
+   //       .catch(err => console.log(err))
+   //      .finally(()=> setLoading(false))
+   //   },2000);
+
+   //      }
+        
+        
+   //      else{ 
+   //         setTimeout(()=>{    
+   //       getFetch
+   //       .then(respuesta =>{ setProductos(respuesta)
+   //        } )
+   //       .catch(err => console.log(err))
+   //      .finally(()=> setLoading(false))
+   //   },2000);
            
          
-        }
-         }, [ categoriaId,])
+   //      }
+   //       }, [ categoriaId,])
 
-    console.log(categoriaId)
+   //  console.log(categoriaId)
     return (
                    <div className="divclass">
                        

@@ -1,5 +1,6 @@
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
 import { useState,useEffect } from "react"
-import { getFetch } from "../../clase5/getFetch"
+// import { getFetch } from "../../clase5/getFetch"
 // import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
 
 
@@ -19,9 +20,14 @@ const {detalleId}= useParams()
    useEffect(()=>{
     setTimeout(()=>{
 
+const querydb = getFirestore()
+const queryCollection = collection(querydb ,"productos")
+// const queryFilter = query(queryCollection,
+//      where("categoria","==",'liquidacion')) 
+// getFetch
+        getDocs(queryCollection)
+        .then(resp => setProducto(resp.docs.map(item => ( {id: item.id , ...item.data()})))) 
 
-        getFetch
-        .then(resp => setProducto(resp.find(item=>item.id === detalleId)))
         .catch(err => console.log(err))
         .finally(()=>setLoading(false))
         
