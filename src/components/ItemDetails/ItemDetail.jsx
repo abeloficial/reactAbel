@@ -69,7 +69,7 @@ console.log(cartList)
     <div>{producto.price}</div>
     <h2>{producto.name}</h2>
     
-     {cant ? <ItemCount initial={1} stock={5} OnAdd={OnAdd}              /> :< ButtonCountt handleInter={handleInter}/> }
+     {cant ? <ItemCount initial={1} stock={5} OnAdd={OnAdd}              /> :< ButtonCountt /> }
      
      
 
