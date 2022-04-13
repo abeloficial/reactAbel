@@ -1,11 +1,11 @@
 import { useState,useEffect } from "react"
 import { getFetch } from "../../clase5/getFetch"
-import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
+// import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
 
 
 import {useParams} from "react-router-dom"
 import ItemDetail from "../../ItemDetails/ItemDetail"
-import ItemCount from "../../ItemCount/ItemCount"
+// import ItemCount from "../../ItemCount/ItemCount"
 
 
 
