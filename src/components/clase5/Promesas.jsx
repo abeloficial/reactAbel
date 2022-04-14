@@ -7,7 +7,7 @@ import './promesas.css'
 import ItemList from "../componentes/Itemlist/ItemList";
 // import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
 import { useParams } from "react-router-dom";
-import {collection, getDocs, getFirestore} from "firebase/firestore"
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 
 
 
@@ -25,43 +25,50 @@ function Promesas() {
    
    useEffect(()=>{
       if(categoriaId){
+
          const querydb = getFirestore() //aca apunta a que voy a usar firestore
-         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion 
+         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion
+         const queryFilter = query(queryCollection, where('categoria', '==',`${categoriaId}`)) 
          
-         getDocs(queryCollection)
+         getDocs(queryFilter)
          .then(resp => setProductos(  resp.docs.map(item=> ({ id: item.id, ...item.data()})) ))
    
    
          .catch(err => console.log(err))
         .finally(()=> setLoading(false))
 
+
       }else{
          const querydb = getFirestore() //aca apunta a que voy a usar firestore
-         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion 
-         
+         const queryCollection = collection (querydb, "productos")// para decirle a firestore que me traiga toda la coleccion
          getDocs(queryCollection)
-         .then(resp => setProductos(  resp.docs.map(item=> ({ id: item.id , ...item.data()})) ))
-   
-   
+         .then(resp=> setProductos(  resp.docs.map(item=> ({ id: item.id, ...item.data()})) ))
          .catch(err => console.log(err))
         .finally(()=> setLoading(false))
+        
+
 
       }
+        
+
+    
+      //    const querydb = getFirestore() //aca apunta a que voy a usar firestore
+      //    const queryCollection = collection (querydb, "productos", categoriaId)// para decirle a firestore que me traiga toda la coleccion 
+         
+      //    getDocs(queryCollection)
+      //    .then(resp => setProductos(  resp.docs.map(item=> ({ id: item.id , ...item.data()})) ))
+   
+   
+      //    .catch(err => console.log(err))
+      //   .finally(()=> setLoading(false))
+
+      
      
 
    },[categoriaId])
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    // useEffect(()=>{
+ // useEffect(()=>{
    //      if(categoriaId){ setTimeout(()=>{    
    //       getFetch
    //       .then(respuesta =>{ setProductos(respuesta.filter(item=>item.categoria === categoriaId))

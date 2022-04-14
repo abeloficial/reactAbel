@@ -20,21 +20,26 @@ const {detalleId}= useParams()
    useEffect(()=>{
     setTimeout(()=>{
 
-const querydb = getFirestore()
-const queryCollection = collection(querydb ,"productos")
-// const queryFilter = query(queryCollection,
-//      where("categoria","==",'liquidacion')) 
-// getFetch
-        getDocs(queryCollection)
-        .then(resp => setProducto(resp.docs.map(item => ( {id: item.id , ...item.data()})))) 
+// const querydb = getFirestore()
+// const queryCollection = collection(querydb ,"productos")
+// // const queryFilter = query(queryCollection,
+// //      where("categoria","==",'liquidacion')) 
+// // getFetch
+//         getDocs(queryCollection)
+//         .then(resp => setProducto(resp.docs.map(item => ( {id: item.id, ...item.data()})))) 
 
-        .catch(err => console.log(err))
-        .finally(()=>setLoading(false))
+    const querydb = getFirestore() 
+    const queryProd = doc(querydb, 'productos', detalleId)
+
+    getDoc(queryProd)
+    .then(resp => setProducto(  { id: resp.id, ...resp.data() }  ))
+    .catch(err => console.log(err))
+    .finally(()=>setLoading(false))
         
     },2000)
 
 
-    },)
+    },[detalleId])
    
 
 
