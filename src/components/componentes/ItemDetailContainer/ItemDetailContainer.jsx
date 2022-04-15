@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
+import {  doc, getDoc,  getFirestore,  } from "firebase/firestore"
 import { useState,useEffect } from "react"
 // import { getFetch } from "../../clase5/getFetch"
 // import Intercambiabilidad from "../../Intercambiabilidad/Intercambiabilidad"
