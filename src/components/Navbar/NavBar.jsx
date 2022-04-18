@@ -24,10 +24,10 @@ function NavBar(crops) {
                 <Nav className="me-auto">
                    {/*  <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-                    <NavDropdown title="Opciones" id="collasible-nav-dropdown">
-                    <NavLink to="/categoria/liquidacion">liquidacion</NavLink>
+                    <NavDropdown title="Opciones" id="collasible-nav-dropdown" > 
+                    <NavLink to="/categoria/liquidacion"><button className="btn btn-outline-info" > Liquidacion</button></NavLink>
                     {/* <NavLink to="/categoria/articulos">Articulos de temporada</NavLink> */}
-                    <NavLink to="/categoria/promo">Promos</NavLink>
+                    <NavLink to="/categoria/promo"><button className="btn btn-outline-info">  Promos  </button></NavLink>
                     <NavDropdown.Divider />
                     {/* <NavDropdown.Item href="#action/3.4">Intagram</NavDropdown.Item> */}
                     </NavDropdown>
@@ -35,6 +35,7 @@ function NavBar(crops) {
                 <Nav>
                     <Link to='/cart'>
                       {/* Carrito */}
+                      
                       <button type="button" class="btn $indigo-200">
                             Carrito <span class="badge bg-secondary">{cantidadTotalItem()}</span>
                      </button>

@@ -1,5 +1,6 @@
 import './ItemCount.css'
 import {useState} from 'react'
+// import { Link } from 'react-router-dom'
 
 
           
@@ -29,7 +30,9 @@ const  [contador,setContador] = useState(initial)
   const fnreset = ()=>{
     OnAdd(contador)
     setContador(contador)
+    
   }
+  
   console.log(contador)
   return (
     <div className='divo  bg-light container '>
@@ -42,6 +45,7 @@ const  [contador,setContador] = useState(initial)
                   <button    onClick={fnsumar}          className='btn btn-info ' >+</button>
                   
                   <h2>{contador}</h2>
+                  
                   <button  onClick={fnresta} className='btn btn-danger '  >-</button>
                   
                   </div>
@@ -50,7 +54,13 @@ const  [contador,setContador] = useState(initial)
             </div>
         </div>
         <br/>
-        <button className="btn btn-outline-info" onClick={fnreset}>Agregar Al Carrito</button>
+        <div>
+        <button className="btn btn-outline-info" onClick={fnreset} >Agregar Al Carrito</button>
+        </div>
+       
+
+        
+        
     </div>
   )
 }
