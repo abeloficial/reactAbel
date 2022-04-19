@@ -1,6 +1,6 @@
 
 import { useCartContex } from '../../../context/cartContext'
-import {addDoc, collection, doc, getFirestore, updateDoc} from 'firebase/firestore'
+import {addDoc, collection, doc, documentId, getDocs, getFirestore, query, updateDoc, where, writeBatch} from 'firebase/firestore'
 import { useState } from 'react'
 
 function Cart() {
@@ -14,9 +14,9 @@ function Cart() {
   
   const {cartList, removeCart,removeItem,precioTotal} = useCartContex()
   
-  const generarOrden = (e)=>{
-    e.preventDefault();
-    console.log("funcionando el generar orden")
+  const generarOrden = async (event)=>{
+    event.preventDefault();
+    // console.log("funcionando el generar orden")
    // Nuevo objeto de orders
    let orden = {}
 
@@ -35,21 +35,36 @@ function Cart() {
   // Creacion de un documento
 
   const db = getFirestore ()
-  // const queryCollection = collection(db,'orders')
-  // addDoc(queryCollection, orden)
-  // .then(resp => console.log(resp))
-  // .catch(error)
+  const queryCollection = collection(db,'orders')
+  await addDoc(queryCollection, orden)
+  .then(({id}) => alert('su numero de id es :' + id))
+  // .catch(err => console.log('error'))
   // .finally()
   
   //update, modificar un archivo
-  const queryUpdate = doc(db , 'productos' , formData)
-  updateDoc(queryUpdate,{
-    stock : 100
-  })
-  .then(resp => console.log('actualizado'))
-  // console.log(orden)
+  // const queryUpdate = doc(db , 'productos' , formData)
+  // updateDoc(queryUpdate,{
+  //   stock : 100
+  // })
+  // .then(resp => console.log(  resp))
+  // // console.log(orden)
 
-  }
+  // }
+  // Actualizar el stock
+  const queryCollectionStock = collection(db,'productos')
+
+  const queryActualizarStock = await query (
+    queryCollectionStock,
+    where(documentId(),'in', cartList.map(it=> it.id))
+  )
+  const batch = writeBatch(db)
+  await getDocs(queryActualizarStock)
+  .then(resp => resp.docs.forEach(res=> batch.update(res.ref,{
+    stock: res.data().stock - cartList.find(item=>item.id === res.id).cantidad
+  })))
+  .finally(()=> console.log('actualizado'))
+  batch.commit()
+}
 const handleChange= (event)=>{
 setFormData({
   ...formData,

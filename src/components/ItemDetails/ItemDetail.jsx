@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {  useCartContex } from '../../context/cartContext'
 
 import ItemCount from '../ItemCount/ItemCount'
-import './ItemDetails.css'
+import './itemDetails.css'
 
 
 
@@ -43,15 +43,16 @@ const Lola = ()=>{
  <> 
    <Link to='/Cart'>
    
-   <button onClick={console.log('ckickn')}
+   <button onClick={console.log()}
        className="btn btn-outline-primary" 
       
       > Terminar compra
    </button>
    </Link>
+   <br/>
    <Link  to='/'>
    
-   <button onClick={console.log('ckickn')}
+   <button onClick={console.log()}
        className="btn btn-outline-primary" 
        
       > Seguir Comprando
