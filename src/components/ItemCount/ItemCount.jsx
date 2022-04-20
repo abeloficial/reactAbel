@@ -41,7 +41,7 @@ const  [contador,setContador] = useState(initial)
                   <div>
                    
                   </div>
-                  <div className='botones container d-flex justify-content-evenly'>
+                  <div className='botones container d-flex justify-content-evenly m-5'>
                   <button    onClick={fnsumar}          className='btn btn-info ' >+</button>
                   
                   <h2>{contador}</h2>
@@ -49,11 +49,11 @@ const  [contador,setContador] = useState(initial)
                   <button  onClick={fnresta} className='btn btn-danger '  >-</button>
                   
                   </div>
-                  <br/>
+                  
                   
             </div>
         </div>
-        <br/>
+        
         <div>
         <button className="btn btn-outline-info" onClick={fnreset} >Agregar Al Carrito</button>
         </div>

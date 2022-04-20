@@ -18,16 +18,16 @@ function NavBar(crops) {
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
                   <img src={logo}width="70rem"    alt="imagenlogo"        />
-                <NavLink to="/">Mi Bebe Perfu</NavLink>
+                <NavLink to="/"> <h2 style={{ fontFamily:"Montserrat", color:"black"}}>  Home  </h2> </NavLink>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                    {/*  <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-                    <NavDropdown title="Opciones" id="collasible-nav-dropdown" > 
-                    <NavLink to="/categoria/liquidacion"><button className="btn btn-outline-info" > Liquidacion</button></NavLink>
+                    <NavDropdown title="Categorias" id="collasible-nav-dropdown" > 
+                    <NavLink to="/categoria/liquidacion"><h6  style={{ fontFamily:"Montserrat", color:"black"}}> Liquidacion</h6></NavLink>
                     {/* <NavLink to="/categoria/articulos">Articulos de temporada</NavLink> */}
-                    <NavLink to="/categoria/promo"><button className="btn btn-outline-info">  Promos  </button></NavLink>
+                    <NavLink to="/categoria/promo"><h6 style={{ fontFamily:"Montserrat", color:"black",width:"10rem"}}>  Promos  </h6></NavLink>
                     <NavDropdown.Divider />
                     {/* <NavDropdown.Item href="#action/3.4">Intagram</NavDropdown.Item> */}
                     </NavDropdown>

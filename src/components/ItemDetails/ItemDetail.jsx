@@ -6,21 +6,6 @@ import ItemCount from '../ItemCount/ItemCount'
 import './itemDetails.css'
 
 
-
-
-// const ButtonCountt= ({handleInter})=> {
-  
-//   return <button 
-//               className="btn btn-outline-success" 
-//               onClick={handleInter}
-//           >Agregar Al carrito</button>
-          
-
-// }
-
-
-
-  
 function ItemDetail({producto}) {
   const {addToCart, cartList} = useCartContex()
   
@@ -40,11 +25,11 @@ const Lola = ()=>{
            
   return(
     
- <> 
+ <div className='container d-flex-inline'> 
    <Link to='/Cart'>
    
    <button onClick={console.log()}
-       className="btn btn-outline-primary" 
+       className="btn btn-outline-info m-3" 
       
       > Terminar compra
    </button>
@@ -53,7 +38,7 @@ const Lola = ()=>{
    <Link  to='/'>
    
    <button onClick={console.log()}
-       className="btn btn-outline-primary" 
+       className="btn btn-outline-info" 
        
       > Seguir Comprando
    </button>
@@ -61,26 +46,26 @@ const Lola = ()=>{
    </Link>
    
   
-   </>
+   </div>
 )}
 
 
 console.log(cartList)
-  // const [cant, setCant] = useState(true)
-  
-//   }
-// const Testado = ()=>{
-//   setCant(false)
-// }
   
   
   return (
-    <div className='  container lilita '>
-      
-    <img src={producto.img}  className='img' alt="imagen"/>
-    <div>{producto.price}</div>
-    <h2>{producto.name}</h2>
-    {cambio === true ?  <ItemCount initial={1} stock={5} OnAdd={OnAdd} /> :    <Lola/>  }  
+    <div className='container detail'>
+     <div className='lilita'>
+       <div className='bg-warning'>
+         <h2 style={{fontFamily:"Montserrat"}}>Mi Bebe Perfu</h2>
+       </div>
+     <img src={producto.img}  className='img' alt="imagen"/>
+    <h2 style={{fontFamily:"Montserrat"}}>${producto.price}</h2>
+    <h2 style={{fontFamily:"Montserrat"}}>Tintura:{producto.name}</h2>
+    {cambio === true ?  <ItemCount initial={1} stock={5} OnAdd={OnAdd}  /> :    <Lola/>  }  
+       
+       </div> 
+   
     
  
     </div>

@@ -1,8 +1,19 @@
 .img{
-    width: 18rem;
+    width: 10rem;
+    align-items: center;
+  
+    
 }
-.lilita{
-   width: 500px;
-   background-color:pink;
+
+.detail{
+
+    background-color: white;
+}
+
+
+@media (min-width: 360px) {
+    .img{
+        
+    }
     
 }
