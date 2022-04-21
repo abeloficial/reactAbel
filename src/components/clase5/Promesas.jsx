@@ -3,7 +3,7 @@
 
 import { useEffect,useState } from "react";
 //  import { getFetch } from "./getFetch";
-import "../clase5/Promesas.css"
+import "./Promesas.css"
 import ItemList from "../componentes/Itemlist/ItemList";
 // import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
 import { useParams } from "react-router-dom";
