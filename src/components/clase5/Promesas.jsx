@@ -6,7 +6,7 @@ import ItemList from "../componentes/Itemlist/ItemList"
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import  Carousel  from "react-bootstrap/Carousel";
-import './Promesas.css'
+// import './promesas.css'
 
 
 
