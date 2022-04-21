@@ -3,6 +3,7 @@ import { useCartContex } from '../../../context/cartContext'
 import {addDoc, collection,  documentId, getDocs, getFirestore, query, where, writeBatch} from 'firebase/firestore'
 import { useState } from 'react'
 import Modal from './Modal'
+import './cart.css'
 
 function Cart() {
   const [formData, setFormData]= useState({
@@ -81,12 +82,23 @@ setFormData({
                 {cartList.length === 0 ? <h2 className='d-flex'>Tu carrito esta vacio</h2>:<div className='container  '>
 
                   
-            {cartList.map(prod => <div className='d-inline-flex' key={prod.id}> <img src= {prod.img} style={{height:"8rem"}} alt="imagen" />nombre:{prod.name}- cantidad : {prod.cantidad} - precio : {prod.price} <button  onClick={()=>removeItem(prod.id)}><img src='https://docs.qgis.org/2.14/es/_images/mActionDeleteSelected.png'alt='img' style={{width:"4rem", height: "4rem", display:""}}/></button> </div>)}
+            {cartList.map(prod => 
+           
+           <div className='d-inline-flex divClase ' key={prod.id}> 
+           
+                <img src= {prod.img} className="imgCart"  alt="imagen" />
+               <div> 
+               <h2 className='clase1'> nombre:{prod.name}</h2> <h2 className='clase1'> cantidad : {prod.cantidad} </h2> <h2 className='clase1'>  Precio ${prod.price}  </h2>
+               </div>
+                -     
+                <label  onClick={()=>removeItem(prod.id)}> 
+                <img src='https://cdn-icons-png.flaticon.com/512/3221/3221897.png' alt='' className='iconDelete'/></label>
+            </div>)}
 
 
                                           {precioTotal()  !== 0 && <h2> El precio total es : $ {precioTotal()} </h2> }
                                           <button className='btn btn-outline-info' onClick={removeCart} > Vaciar Carrito</button>
-                                        <div className='container bg-danger'>
+                                        <div className='container bg-dark form'>
                                           
                                         <form
                                         onSubmit={generarOrden}  >
@@ -94,7 +106,7 @@ setFormData({
                                           <input name='email' type='email' placeholder='Ingrese Email'  onChange={handleChange} value={formData.email}className="container m-2"/>
                                           <input name='phone' type='number'   placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone}className="container m-2"/>
                                          
-                                          <button className='btn btn-outline-info' > Generar orden</button>
+                                          <button className='btn btn-outline-warning' > Generar orden</button>
                                         </form>
                                         <Modal />
                                         </div>  

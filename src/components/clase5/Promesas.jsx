@@ -6,7 +6,7 @@ import ItemList from "../componentes/Itemlist/ItemList"
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import  Carousel  from "react-bootstrap/Carousel";
-// import './promesas.css'
+import './promesas.css'
 
 
 
@@ -80,7 +80,7 @@ function Promesas() {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block w-100 "
       src="https://images.pexels.com/photos/9202892/pexels-photo-9202892.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
       alt="Second slide"
       style={{height:"20rem",width:"20rem"}} />

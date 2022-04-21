@@ -1,0 +1,54 @@
+.iconDelete{
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+   
+}
+.imgCart{
+
+
+    height:"10rem"
+}
+.clase1{
+    font-family: Montserrat;
+    font-size: 25px;
+    margin: 10px;
+}
+.form{
+    width: 380px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 20px;
+}
+.divClase{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    
+}
+@media(max-width:600px){
+    .divClase{
+        border: 1px solid white;
+        
+    }
+    .clase1{
+        font-family: Montserrat;
+        font-size: 15px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .imgCart{
+        height: 130px;
+    }
+    .iconDelete{
+        width: 50px;
+        height: 50px;
+    }
+    .form{
+        width:342px;
+    }
+    .label{
+        padding: 50px;
+    }
+    
+}

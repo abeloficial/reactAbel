@@ -6,7 +6,11 @@
 
    .clase2{
          font-family: Montserrat;
-        font-size: 30px;
+         font-size: 30px;
+         margin-top: 40px;
+
+
+
         
        } 
 .control{
@@ -19,12 +23,7 @@
            display: flex;
            flex-direction: column;
             margin: 0;
-           
-           
-           
-           
-           
-       }
+            }
        .control {
            /* display: none; */
            display: block;
@@ -36,8 +35,10 @@
           
 
        }
-       .h2{
-           font-size: 10px; 
+       .clase2{
+           font-size: 20px; 
            color: pink;
+          
+           margin-top: 50px;
        }
    } 
