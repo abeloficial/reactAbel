@@ -1,6 +1,6 @@
 
 import { useCartContex } from '../../../context/cartContext'
-import {addDoc, collection, doc, documentId, getDocs, getFirestore, query, updateDoc, where, writeBatch} from 'firebase/firestore'
+import {addDoc, collection,  documentId, getDocs, getFirestore, query, where, writeBatch} from 'firebase/firestore'
 import { useState } from 'react'
 import Modal from './Modal'
 
@@ -81,7 +81,7 @@ setFormData({
                 {cartList.length === 0 ? <h2 className='d-flex'>Tu carrito esta vacio</h2>:<div className='container  '>
 
                   
-            {cartList.map(prod => <div className='d-inline-flex' key={prod.id}> <img src= {prod.img} style={{height:"8rem"}} alt="imagen" />nombre:{prod.name}- cantidad : {prod.cantidad} - precio : {prod.price} <button  onClick={()=>removeItem(prod.id)}><img src='https://docs.qgis.org/2.14/es/_images/mActionDeleteSelected.png' style={{width:"4rem", height: "4rem", display:""}}/></button> </div>)}
+            {cartList.map(prod => <div className='d-inline-flex' key={prod.id}> <img src= {prod.img} style={{height:"8rem"}} alt="imagen" />nombre:{prod.name}- cantidad : {prod.cantidad} - precio : {prod.price} <button  onClick={()=>removeItem(prod.id)}><img src='https://docs.qgis.org/2.14/es/_images/mActionDeleteSelected.png'alt='img' style={{width:"4rem", height: "4rem", display:""}}/></button> </div>)}
 
 
                                           {precioTotal()  !== 0 && <h2> El precio total es : $ {precioTotal()} </h2> }
