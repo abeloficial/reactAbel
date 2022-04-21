@@ -1,14 +1,12 @@
-
-
-
 import { useEffect,useState } from "react";
 //  import { getFetch } from "./getFetch";
-import "./Promesas.css"
+
 import ItemList from "../componentes/Itemlist/ItemList"
 // import ItemDetailContainer from "../componentes/ItemDetailContainer/ItemDetailContainer";
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import  Carousel  from "react-bootstrap/Carousel";
+import './Promesas.css'
 
 
 
