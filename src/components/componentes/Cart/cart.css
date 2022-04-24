@@ -4,11 +4,11 @@
     margin: 20px;
    
 }
+
 .imgCart{
-
-
-    height:"10rem"
+    height: 200px;
 }
+
 .clase1{
     font-family: Montserrat;
     font-size: 25px;
@@ -21,14 +21,22 @@
     border-radius: 20px;
 }
 .divClase{
-    border: 1px solid black;
+    /* border: 0px, 1px, 0px, 2px solid black; */
+  border-bottom:1px solid  black;
+  border-right:1px solid  black; 
+  border-bottom-width: 5px;
+  border-radius: 15px;
+  
     padding: 5px;
     margin: 5px;
     
 }
 @media(max-width:600px){
     .divClase{
-        border: 1px solid white;
+        border-bottom: 1px solid black;
+        border-right:1px solid  white;
+        border-radius: 15px;
+        border-bottom-width: 5px;
         
     }
     .clase1{

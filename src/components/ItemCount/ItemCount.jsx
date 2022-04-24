@@ -37,11 +37,11 @@ const  [contador,setContador] = useState(initial)
   return (
     <div className='divo  bg-light container '>
         <div className="lola  d-flex">
-            <div className=' container ' > 
+            <div className=' container nera' > 
                   <div>
                    
                   </div>
-                  <div className='botones container d-flex justify-content-evenly m-5'>
+                  <div className='botones container d-flex  justify-content-evenly '>
                   <button    onClick={fnsumar}          className='btn btn-info ' >+</button>
                   
                   <h2>{contador}</h2>
@@ -50,13 +50,15 @@ const  [contador,setContador] = useState(initial)
                   
                   </div>
                   
-                  
+                 
+                    <div className='m-2 '> 
+                    <button className="btn btn-outline-info  btnCarrito" onClick={fnreset} >Agregar Al Carrito</button>
+                    </div>
+        
             </div>
         </div>
         
-        <div>
-        <button className="btn btn-outline-info" onClick={fnreset} >Agregar Al Carrito</button>
-        </div>
+        
        
 
         

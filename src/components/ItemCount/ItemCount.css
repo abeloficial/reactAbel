@@ -9,9 +9,53 @@
     
    
 .divo{
-    width:320px
+    width:300px
     
 }
+.nera{
+    border: 10px;
+}
+@media (max-width:600px) {
+    .botones{
+        margin: 35px;
+    }
+    .btnCarrito{
+        margin: 50px;
+        
+    }
+    .divBoton{
+        margin:0px ;
+        height: 30px;
+    }
+    .nera{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    .divo{
+        width: 266px;
+    }
+}
+
+/* @media (max-width:600px) {
+    .btnCarrito{
+        border: 100px;
+        
+
+    }
+   
+    .botones{
+        margin: 35px;
+    }
+    .divo{
+        height: 10px;
+        background-color: red;
+    }
+    .lola{
+        height: 50px;
+        
+    }
+} */
 /* .btn-info{
   width: 40px;
 }

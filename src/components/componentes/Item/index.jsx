@@ -19,7 +19,7 @@ function Item({producto}) {
                                         <Card.Body className=" cardBody shadow-lg p-3 mb-1 bg-body rounded">
                                             <Card.Title className="title">{producto.name}</Card.Title>
                                             <Card.Text>
-                                            Esto es un texto de prueba
+                                            {producto.info}
                                             </Card.Text>
                                             <Link to={`/detalle/${producto.id}`}>
                                             <Button className="btn btn-warning">Ver Mas</Button>

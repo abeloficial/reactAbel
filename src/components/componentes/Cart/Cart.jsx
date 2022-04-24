@@ -4,6 +4,7 @@ import {addDoc, collection,  documentId, getDocs, getFirestore, query, where, wr
 import { useState } from 'react'
 import Modal from './Modal'
 import './cart.css'
+import ItemCount from '../../ItemCount/ItemCount'
 
 function Cart() {
   const [formData, setFormData]= useState({
@@ -20,6 +21,8 @@ function Cart() {
     event.preventDefault();
     // console.log("funcionando el generar orden")
    // Nuevo objeto de orders
+   
+   
    let orden = {}
 
    orden.buyer = formData
@@ -34,6 +37,8 @@ function Cart() {
  
      
    })
+
+
   // Creacion de un documento
 
   const db = getFirestore ()
@@ -89,6 +94,7 @@ setFormData({
                 <img src= {prod.img} className="imgCart"  alt="imagen" />
                <div> 
                <h2 className='clase1'> nombre:{prod.name}</h2> <h2 className='clase1'> cantidad : {prod.cantidad} </h2> <h2 className='clase1'>  Precio ${prod.price}  </h2>
+               <ItemCount/>
                </div>
                 -     
                 <label  onClick={()=>removeItem(prod.id)}> 
@@ -102,9 +108,9 @@ setFormData({
                                           
                                         <form
                                         onSubmit={generarOrden}  >
-                                          <input name='name' type='text'   placeholder='Ingrese nombre'  onChange={handleChange} value={formData.name} className="container m-2"/>
-                                          <input name='email' type='email' placeholder='Ingrese Email'  onChange={handleChange} value={formData.email}className="container m-2"/>
-                                          <input name='phone' type='number'   placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone}className="container m-2"/>
+                                          <input name='name' type='text'   placeholder='Ingrese nombre'  onChange={handleChange} value={formData.name} required className="container m-2"/>
+                                          <input name='email' type='email' placeholder='Ingrese Email'  onChange={handleChange} value={formData.email} required         className="container m-2"/>
+                                          <input name='phone' type='number'   placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone} required     className="container m-2"/>
                                          
                                           <button className='btn btn-outline-warning' > Generar orden</button>
                                         </form>

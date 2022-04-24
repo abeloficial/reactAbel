@@ -62,6 +62,14 @@ console.log(cartList)
      <img src={producto.img}  className='img' alt="imagen"/>
     <h2 style={{fontFamily:"Montserrat"}}>${producto.price}</h2>
     <h2 style={{fontFamily:"Montserrat"}}>Tintura:{producto.name}</h2>
+    <div>
+      <img src={producto.carta} alt="cartaColores"/>
+     <h3 className='' style={{fontFamily:"Montserrat"}}> {producto.info}   </h3> 
+    
+    
+    
+    </div>
+    
     {cambio === true ?  <ItemCount initial={1} stock={5} OnAdd={OnAdd}  /> :    <Lola/>  }  
        
        </div> 
