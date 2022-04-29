@@ -57,13 +57,13 @@ console.log(cartList)
     <div className='container detail'>
      <div className='lilita'>
        <div className='bg-warning'>
-         <h2 style={{fontFamily:"Montserrat"}}>Mi Bebe Perfu</h2>
+         <h1 style={{fontFamily:"Nomark", background:"black", color: "white"}}>Mi Bebe Perfu</h1>
        </div>
      <img src={producto.img}  className='img' alt="imagen"/>
     <h2 style={{fontFamily:"Montserrat"}}>${producto.price}</h2>
     <h2 style={{fontFamily:"Montserrat"}}>Tintura:{producto.name}</h2>
     <div>
-      <img src={producto.carta} alt="cartaColores"/>
+      {/* <img src={producto.carta} alt="cartaColores"/> */}
      <h3 className='' style={{fontFamily:"Montserrat"}}> {producto.info}   </h3> 
     
     

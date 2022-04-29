@@ -15,7 +15,7 @@ function Item({producto}) {
 
 
                                   <Card  className="container m-3 lola shadow-lg border col-md-2 " >
-                                        <Card.Img variant="top" src={producto.img} className="imagenes" style={{width:"10rem"}} />
+                                        <Card.Img variant="top" src={producto.img} className="imagenes" style={{width:"9rem", height:"9rem"}} />
                                         <Card.Body className=" cardBody shadow-lg p-3 mb-1 bg-body rounded">
                                             <Card.Title className="title">{producto.name}</Card.Title>
                                             <Card.Text>

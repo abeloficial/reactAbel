@@ -4,7 +4,7 @@ import {addDoc, collection,  documentId, getDocs, getFirestore, query, where, wr
 import { useState } from 'react'
 import Modal from './Modal'
 import './cart.css'
-import ItemCount from '../../ItemCount/ItemCount'
+import { Link } from 'react-router-dom'
 
 function Cart() {
   const [formData, setFormData]= useState({
@@ -13,6 +13,11 @@ function Cart() {
     name: "  ",
 
   })
+  const [cartChange, setCartChange] = useState(true)
+
+  const handleCart = ()=>{
+    setCartChange(false)
+  }
 
   
   const {cartList, removeCart,removeItem,precioTotal} = useCartContex()
@@ -42,11 +47,12 @@ function Cart() {
   // Creacion de un documento
 
   const db = getFirestore ()
-  const queryCollection = collection(db,'orders')
+  const queryCollection = collection(db,'ordenes')
   await addDoc(queryCollection, orden)
-  .then(({id}) => alert('su numero de id es :' + id))
-  // .catch(err => console.log('error'))
-  // .finally()
+  // .then(resp => resp.forEach(elemnt => <h2>Gracias por su compra el id de su orden es : {elemnt.id}</h2>))
+  .then(({id}) => alert(`su orden se genero exitosamente : ${id}`))
+  .catch(err => console.log('error'))
+  .finally()
   
   //update, modificar un archivo
   // const queryUpdate = doc(db , 'productos' , formData)
@@ -58,19 +64,19 @@ function Cart() {
 
   // }
   // Actualizar el stock
-  const queryCollectionStock = collection(db,'productos')
+  // const queryCollectionStock = collection(db,'productos')
 
-  const queryActualizarStock = await query (
-    queryCollectionStock,
-    where(documentId(),'in', cartList.map(it=> it.id))
-  )
-  const batch = writeBatch(db)
-  await getDocs(queryActualizarStock)
-  .then(resp => resp.docs.forEach(res=> batch.update(res.ref,{
-    stock: res.data().stock - cartList.find(item=>item.id === res.id).cantidad
-  })))
-  .finally(()=> console.log('actualizado'))
-  batch.commit()
+  // const queryActualizarStock = await query (
+  //   queryCollectionStock,
+  //   where(documentId(),'in', cartList.map(it=> it.id))
+  // )
+  // const batch = writeBatch(db)
+  // await getDocs(queryActualizarStock)
+  // .then(resp => resp.docs.forEach(res=> batch.update(res.ref,{
+  //   stock: res.data().stock - cartList.find(item=>item.id === res.id).cantidad
+  // })))
+  // .finally(()=> console.log('actualizado'))
+  // batch.commit()
 }
 const handleChange= (event)=>{
 setFormData({
@@ -78,12 +84,18 @@ setFormData({
   [event.target.name]: event.target.value
 })
 }
+
+
  
   console.log(formData)
   
+
   return (
+          <> 
+                   <h1 style={{fontFamily:"Nomark", background:"black", color: "white"}}>Mi Bebe Perfu</h1>
 
         <div className='container d-flex flex-row col-md-12'>
+
                 {cartList.length === 0 ? <h2 className='d-flex'>Tu carrito esta vacio</h2>:<div className='container  '>
 
                   
@@ -94,7 +106,7 @@ setFormData({
                 <img src= {prod.img} className="imgCart"  alt="imagen" />
                <div> 
                <h2 className='clase1'> nombre:{prod.name}</h2> <h2 className='clase1'> cantidad : {prod.cantidad} </h2> <h2 className='clase1'>  Precio ${prod.price}  </h2>
-               <ItemCount/>
+               
                </div>
                 -     
                 <label  onClick={()=>removeItem(prod.id)}> 
@@ -104,15 +116,21 @@ setFormData({
 
                                           {precioTotal()  !== 0 && <h2> El precio total es : $ {precioTotal()} </h2> }
                                           <button className='btn btn-outline-info' onClick={removeCart} > Vaciar Carrito</button>
-                                        <div className='container bg-dark form'>
+                                        <div className='container  form'>
                                           
                                         <form
                                         onSubmit={generarOrden}  >
-                                          <input name='name' type='text'   placeholder='Ingrese nombre'  onChange={handleChange} value={formData.name} required className="container m-2"/>
-                                          <input name='email' type='email' placeholder='Ingrese Email'  onChange={handleChange} value={formData.email} required         className="container m-2"/>
-                                          <input name='phone' type='number'   placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone} required     className="container m-2"/>
+                                          
+                                          <input name='name' type='text'   placeholder='Ingrese nombre'    onChange={handleChange} value={formData.name}  required  className="container m-2 input"/>
+                                          <input name='email' type='email' placeholder='Ingrese Email'     onChange={handleChange} value={formData.email} required  className="container m-2 input"/>
+                                          <input name='phone' type='number'placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone} required  className="container m-2 input"/>
+                                           <button className='btn btn-warning' onClick={handleCart}> Generar orden</button> <Link to={"/"}>
+            <button onClick={removeCart} className="btn btn-warning m-2">Finalizar Compra e ir a home</button>
+           </Link>
+                                        
+
                                          
-                                          <button className='btn btn-outline-warning' > Generar orden</button>
+                                         
                                         </form>
                                         <Modal />
                                         </div>  
@@ -121,6 +139,7 @@ setFormData({
 
                                   </div>    }
       </div>
+      </> 
 )
     
     

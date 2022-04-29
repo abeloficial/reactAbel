@@ -55,55 +55,12 @@ function Promesas() {
  
     return (
                    <div className="divclass ">
-<div className="bg-warning    ">
+<div className="bgCarrusel    ">
 <div>
   <div>
-    <h2 style={{color : "white",fontFamily:"Montserrat"}} className="bg-dark " >Mi Bebe Perfu</h2>
+    <h1 style={{color : "white"}} className="bg-dark m-5 " >Mi Bebe Perfu</h1>
   </div>
 </div>
-<Carousel style={{width:"50rem",height:"20rem"}} className="container mt-3 bg-warning  carrusel ">
-  {/* <div>
-    <div>
-      <h2 style={{color : "white"}} className="bg-dark d-block"> 6 cuotas sin interes</h2>
-    </div>
-  </div> */}
-  <Carousel.Item>
-    <img
-      className="d-block w-100 carrusel"
-      src="https://d3cdlnm7te7ky2.cloudfront.net/media/wysiwyg/Brands/bmd_responsive_2_.jpg"
-      alt="First slide"
-    style={{height:"20rem", width:"20rem"}}/>
-    <Carousel.Caption>
-      {/* <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100 "
-      src="https://images.pexels.com/photos/9202892/pexels-photo-9202892.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-      alt="Second slide"
-      style={{height:"20rem",width:"20rem"}} />
-
-    <Carousel.Caption>
-      {/* <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100"
-      src="https://cdn.crello.com/api/media/small/315874482/stock-photo-panoramic-shot-makeup-artist-apply"
-      alt="Third slide"
-      style={{height:"20rem",width:"20rem"}}/>
-
-    <Carousel.Caption>
-      {/* <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
-
 
 </div>
 

@@ -4,7 +4,21 @@
     margin: 20px;
    
 }
+.input{
+    border-top: 1px solid white;
+border-right: 2px dotted white;   
+border-bottom: 2px solid black;
+border-left: 4px double white;
 
+width: px;
+
+    color: black;
+
+
+}
+h3{
+    font-family:Nomark;
+}
 .imgCart{
     height: 200px;
 }
@@ -18,7 +32,8 @@
     width: 380px;
     margin-top: 50px;
     padding: 15px;
-    border-radius: 20px;
+    border-bottom:1px solid black;
+   
 }
 .divClase{
     /* border: 0px, 1px, 0px, 2px solid black; */
@@ -32,6 +47,18 @@
     
 }
 @media(max-width:600px){
+    .input{
+        border-top: 1px solid black;
+   border-right: 2px dotted white;   
+   border-bottom: 2px dashed white;
+   border-left: 4px double white;
+
+        color: white;
+
+
+    }
+    
+    
     .divClase{
         border-bottom: 1px solid black;
         border-right:1px solid  white;

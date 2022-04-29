@@ -6,7 +6,7 @@ export const useCartContex = ()=> useContext(CartContext)
      const [cartList, setCartList] = useState([])
 
     const addToCart = (item)=>{    // Funcion de agregar al carrito y detecta si tengo algun duplicado y no me vuelve a renderizar
-       console.log(item)
+       
        const inCart = cartList.find(
            (product)=> product.id === item.id)
       

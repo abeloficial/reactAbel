@@ -17,6 +17,15 @@
     width: 20rem;
     height: 10rem;
 }
+h1{
+    font-family: Nomark;
+}
+.bgCarrusel{
+    background-color: rgb(249, 249, 249);
+    margin: 10px;
+    padding: 15px;
+    
+}
        
  @media (max-width: 600px ) {
        .carNegra {

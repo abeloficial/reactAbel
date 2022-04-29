@@ -15,14 +15,11 @@ import CartContextProvider from "../context/cartContext"
 function Contenedor() {
 
 
-    // const handleConsole = ()=>{
-    //     console.log('soy eveneto')
-      
-    //   }
+    
       const fnSaludo = ()=>{
         console.log('estoy saludando')
       }
-      // let tituloprops2 = 'Soy titulo de app'
+      
      let arrayDeNombres = ['elena','paola','abel']
     return (
        <BrowserRouter>
