@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Modal from './Modal'
 import './cart.css'
 import { Link } from 'react-router-dom'
+import emailjs from 'emailjs-com'
 
 function Cart() {
   const [formData, setFormData]= useState({
@@ -24,6 +25,15 @@ function Cart() {
   
   const generarOrden = async (event)=>{
     event.preventDefault();
+    event.target.reset();
+    
+    handleCart();
+  
+    emailjs.sendForm('service_do1jge3','template_8s3ije5',event.target,'TNj54klQHtchgYjsY').then(res =>{
+      
+      console.log(res)
+    })
+    
     // console.log("funcionando el generar orden")
    // Nuevo objeto de orders
    
@@ -50,7 +60,7 @@ function Cart() {
   const queryCollection = collection(db,'ordenes')
   await addDoc(queryCollection, orden)
   // .then(resp => resp.forEach(elemnt => <h2>Gracias por su compra el id de su orden es : {elemnt.id}</h2>))
-  .then(({id}) => alert(`su orden se genero exitosamente : ${id}`))
+  .then(({id}) => alert(`Gracias por tu compra : ${id}`))
   .catch(err => console.log('error'))
   .finally()
   
@@ -96,7 +106,7 @@ setFormData({
 
         <div className='container d-flex flex-row col-md-12'>
 
-                {cartList.length === 0 ? <h2 className='d-flex'>Tu carrito esta vacio</h2>:<div className='container  '>
+                {cartList.length === 0 ? <h2 className='d-flex clase1 container' >Tu carrito esta vacio</h2>:<div className='container  '>
 
                   
             {cartList.map(prod => 
@@ -117,21 +127,28 @@ setFormData({
                                           {precioTotal()  !== 0 && <h2> El precio total es : $ {precioTotal()} </h2> }
                                           <button className='btn btn-outline-info' onClick={removeCart} > Vaciar Carrito</button>
                                         <div className='container  form'>
-                                          
-                                        <form
+                                        {cartChange === true ? <form
                                         onSubmit={generarOrden}  >
                                           
-                                          <input name='name' type='text'   placeholder='Ingrese nombre'    onChange={handleChange} value={formData.name}  required  className="container m-2 input"/>
+                                          <input  name='name'     placeholder='Ingrese nombre'  onChange={handleChange} value={formData.name}  required className="container m-2 input "/>
                                           <input name='email' type='email' placeholder='Ingrese Email'     onChange={handleChange} value={formData.email} required  className="container m-2 input"/>
                                           <input name='phone' type='number'placeholder='Ingrese telefono'  onChange={handleChange} value={formData.phone} required  className="container m-2 input"/>
-                                           <button className='btn btn-warning' onClick={handleCart}> Generar orden</button> <Link to={"/"}>
-            <button onClick={removeCart} className="btn btn-warning m-2">Finalizar Compra e ir a home</button>
-           </Link>
-                                        
+                                          
+                                           
+                                            <button   className='btn btn-warning'  > Generar orden</button>   
+                                           
+                                          
+                                          
+                                       
 
                                          
                                          
-                                        </form>
+                                        </form> : <h3 className='clase1'>Tu orden se genero exitosamente! <h2>{formData.name}  </h2> el total de compra es de ${precioTotal()}  </h3> }  
+                                       
+                                        <Link to={"/"}>
+                                            <button onClick={removeCart} className="btn btn-warning m-2">Finalizar Compra e ir a home</button>
+                                           </Link>
+                                           
                                         <Modal />
                                         </div>  
 
